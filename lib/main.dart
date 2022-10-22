@@ -61,18 +61,18 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
             children: [
               TableRow(children: [
                 Text('Number Preference'),
-                Text('0'),
+                Text('${this._numberPref}'),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => this._setNumberPref(this._numberPref + 1),
                   child: Text('Increment'),
                 ),
               ]),
               TableRow(
                 children: [
                   Text('Boolean Preference'),
-                  Text('false'.toUpperCase()),
+                  Text('${this._boolPref}'.toUpperCase()),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => _setBoolPref(!this._boolPref),
                     child: Text('Toggle'),
                   ),
                 ],
@@ -80,7 +80,7 @@ class _SharedPreferencesDemoState extends State<SharedPreferencesDemo> {
             ],
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => this._resetDataPref(),
             child: Text('Reset data'),
           ),
         ],
